@@ -32,22 +32,23 @@
     />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+
   </head>
   <body id="page-top">
     <!-- Navigation-->
     <nav
-      class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
+      class="navbar navbar-expand-lg text-uppercase fixed-top"
       id="mainNav"
     >
       <div class="container">
-        <a class="navbar-brand" href="#page-top">Fifty al blue</a>
+        <a class="navbar-brand" href="#page-top">Fifty <span id="blue">al blue</span></a>
         <button
           class="
             navbar-toggler
             text-uppercase
             font-weight-bold
-            bg-primary
-            text-white
+            bg-white
+            text-black
             rounded
           "
           type="button"
@@ -77,30 +78,32 @@
       </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead bg-primary text-white text-center">
+    <header class=" masthead bg-primary text-white text-center">
       <div class="container d-flex align-items-center flex-column">
         <div class="fiftydiv">
           <img class="img-fluid fiftyimg" src="50centclean.jpg" alt="..." />
-          <h1 class="fiftyh1">50</h1> <br>
-          <h2 class="fiftyh2">CENT</h2>
+          <h1 id='fiftyh1'class="fiftyh1">50</h1> <br>
+          <h2 class="fiftyh2">PESOS</h2>
+          <h3 id="fiftyFloat" class="fiftyh3">.75</h3>
         </div>
-        <!-- Masthead Heading-->
-        <h2>50 cent</h2>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
           <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-icon"><i class="fas fa-comments-dollar"></i></div>
           <div class="divider-custom-line"></div>
         </div>
         <!-- Masthead Subheading-->
-        <p class="masthead-subheading font-weight-light mb-0">
-          Graphic Artist - Web Designer - Illustrator
-        </p>
+        <p id='comprablue' class="masthead-subheading font-weight-light mb-0"></p>
+        <p id='ventablue' class="masthead-subheading font-weight-light mb-0"></p>
+
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-music"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <h3 id="cancion"></h3>
       </div>
     </header>
-    <!-- Portfolio Section-->
-
-    <!-- About Section-->
 
     <!-- Footer-->
     <footer class="footer text-center">
@@ -108,37 +111,33 @@
         <div class="row">
           <!-- Footer Location-->
           <div class="col-lg-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Location</h4>
+            <h4 class="text-uppercase mb-4">API</h4>
             <p class="lead mb-0">
-              2215 John Daniel Drive
-              <br />
-              Clark, MO 65243
+              La informacion sobre los valors viene de:
+              <br/>
+              <a href="https://bluelytics.com.ar/">bluelytics.com.ar</a>
             </p>
           </div>
           <!-- Footer Social Icons-->
           <div class="col-lg-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Around the Web</h4>
-            <a class="btn btn-outline-light btn-social mx-1" href="#!"
-              ><i class="fab fa-fw fa-facebook-f"></i
-            ></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="#!"
-              ><i class="fab fa-fw fa-twitter"></i
-            ></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="#!"
+            <h4 class="text-uppercase mb-4">Mis links</h4>
+            <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/BrunoPierca"
+              ><i class="fab fa-github"></i></a>
+            <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/bruno_pierk/"
+              ><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-light btn-social mx-1" value="https://www.linkedin.com/in/bruno-piercamilli/" href="#!"
               ><i class="fab fa-fw fa-linkedin-in"></i
             ></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="#!"
-              ><i class="fab fa-fw fa-dribbble"></i
-            ></a>
+            <a class="btn btn-outline-light btn-social mx-1" href="https://mpago.la/2msFxZQ"
+              ><i class="fas fa-dollar-sign"></i></a>
           </div>
           <!-- Footer About Text-->
           <div class="col-lg-4">
-            <h4 class="text-uppercase mb-4">About Freelancer</h4>
+            <h4 class="text-uppercase mb-4">Proximas adiciones</h4>
             <p class="lead mb-0">
-              Freelance is a free to use, MIT licensed Bootstrap theme created
-              by
-              <a href="http://startbootstrap.com">Start Bootstrap</a>
-              .
+              <p>Imagen responsive</p>
+              <p>Links funcionales a las canciones</p>
+              <p>Notificaciones PUSH</p>
             </p>
           </div>
         </div>
@@ -147,17 +146,17 @@
     <!-- Copyright Section-->
     <div class="copyright py-4 text-center text-white">
       <div class="container">
-        <small>Copyright &copy; Fifty al blue</small>
+        <small>Copyright &copy; Fifty <span id="blue">al blue</span></small>
       </div>
     </div>
 
+    <!-- Valor del dolar Blue -->
+    <script src="js/valorDBlue.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
+ 
+
     <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
   </body>
 </html>
