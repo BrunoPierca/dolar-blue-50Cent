@@ -81,7 +81,15 @@ async function getDhistorico() {
 
 
         data.forEach(element => {
-            if (data[i].date.includes("2021" && "2020")) {
+            if (data[i].date.includes("2021")) {
+                if (data[i].source == 'Blue') {
+                    dblue21.push(data[i].value_sell)
+                    ejeX.push(data[i].date)
+
+                } else {
+                    doficial21.push(data[i].value_sell)
+                }
+            } else if (data[i].date.includes("2020")) {
                 if (data[i].source == 'Blue') {
                     dblue21.push(data[i].value_sell)
                     ejeX.push(data[i].date)
@@ -147,12 +155,5 @@ var myChart = new Chart(ctx, {
 
 getDhistorico()
 
-
-// Grafico con Chart.js
-
-// Our labels along the x-axis
-var years = [2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021];
-var africa = [0,1,0,1,0,0,0,0,0,0,1]
-// For drawing the lines
 
 
