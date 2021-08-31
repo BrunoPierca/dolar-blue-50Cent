@@ -106,22 +106,31 @@
           <div class="divider-custom-icon"><i class="fas fa-music"></i></div>
           <div class="divider-custom-line"></div>
         </div>
+        <div id="cancionRandom">
         <h3 id="cancion"></h3>
+        <p id="album" class="lead"><i class="fas fa-compact-disc"></i></p>
+
+
+        </div>
 
         <div class="divider-custom divider-light">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon"><i class="fas fa-chart-bar"></i></div>
           <div class="divider-custom-line"></div>
         </div>
-
-        <div id="divGraf" class="container m-lg-5 px-lg-5 ">
-          <canvas id="myChart" >
-            
-          </canvas>
+        <div class="container me-lg-5 px-lg-5 px-sm-1 d-flex flex-row-reverse"><div class="row">
+          <div class="btn-group mb-1" role="group" aria-label="Basic button group">
+          <button type="button" id="historico" class="btn btn-outline-primary">Historico</button>
+          <button type="button" id="ultAnio" class="btn btn-outline-primary">Ultimo año</button>
+          <button type="button" id="ultMes" class="btn btn-outline-primary">Ultimo mes</button>
         </div>
 
+        </div></div>
+        <div id="divGraf" class="container m-lg-2 px-lg-5  px-sm-1">
+          <canvas id="myChart">
+          </canvas>
+        </div>
       </div>
-
 
     </header>
 
