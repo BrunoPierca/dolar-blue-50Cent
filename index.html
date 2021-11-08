@@ -36,6 +36,15 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!-- DOM to Image -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js" integrity="sha512-wUa0ktp10dgVVhWdRVfcUO4vHS0ryT42WOEcXjVVF2+2rcYBKTY7Yx7JCEzjWgPV+rj2EDUr8TwsoWF6IoIOPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
   </head>
   <body id="page-top">
     <!-- Navigation-->
@@ -43,7 +52,7 @@
       class="navbar navbar-shrink navbar-expand-lg text-uppercase fixed-top"
       id="mainNav"
     >
-      <div class="container">
+      <div class="container-fluid px-4">
         <a class="navbar-brand" href="#page-top">Fifty <span id="blue">al blue</span></a>
         <button
           class="
@@ -67,6 +76,9 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded animate__animated" id="botonDecimal">Activar decimal</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#footer"
                 >Sobre nosotros</a
               >
@@ -83,9 +95,9 @@
     <!-- Masthead-->
     <header class="masthead bg-black text-white text-center">
       <div class="container d-flex align-items-center flex-column">
-        <div class="fiftydiv">
+        <div id="fiftydiv" class="fiftydiv">
           <img class="img-fluid fiftyimg" src="50centclean.jpg" alt="..." />
-          <h1 id='fiftyh1'class="fiftyh1"></h1> <br>
+          <h1 id='fiftyh1'class="fiftyh1">100</h1> <br>
           <h2 class="fiftyh2">PESOS</h2>
           <h3 id="fiftyFloat" class="fiftyh3"></h3>
         </div>
@@ -97,10 +109,22 @@
           <div class="divider-custom-icon"><i class="fas fa-comments-dollar"></i></div>
           <div class="divider-custom-line"></div>
         </div>
+        
         <!-- Masthead Subheading-->
         <p id='comprablue' class="masthead-subheading font-weight-light mb-0"></p>
         <p id='ventablue' class="masthead-subheading font-weight-light mb-0"></p>
 
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="far fa-save"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+
+        <a id="guardar" class="masthead-subheading font-weight-light text-decoration-no mb-0"">Descargar portada como PNG</a>
+
+        <div id="output"></div>
+        <!-- Icon Divider-->
         <div class="divider-custom divider-light">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon"><i class="fas fa-music"></i></div>

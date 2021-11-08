@@ -26,8 +26,20 @@ nav {
   background-color: #002347;
 }
 
+#botonDecimal:hover {
+  cursor: pointer;
+}
+
 footer {
   background-color: #002347 !important;
+}
+
+#guardar {
+  text-decoration: none !important;
+}
+
+#guardar:hover {
+  cursor: pointer !important;
 }
 
 span#blue {
@@ -49,17 +61,56 @@ h1.fiftyh1 {
   letter-spacing: -5px !important;
   -webkit-text-stroke: 2px #393025;
 }
+h1.fiftyh1a100 {
+  font-family: compactaroman !important;
+  font-weight: normal !important;
+  font-size: 8rem !important;
+  position: absolute !important;
+  top: 2% !important;
+  right: 5.5% !important;
+  transform: scaleX(1.01) scaleY(0.97) !important;
+  color: #d4d1c2 !important;
+  letter-spacing: -5px !important;
+  -webkit-text-stroke: 2px #393025 !important;
+}
+
+h1.fiftyh1a101 {
+  font-family: compactaroman !important;
+  font-weight: normal !important;
+  font-size: 8rem !important;
+  position: absolute !important;
+  top: 2% !important;
+  right: 6.2% !important;
+  transform: scaleX(1.15) scaleY(0.97) !important;
+  color: #d4d1c2 !important;
+  letter-spacing: -5px !important;
+  -webkit-text-stroke: 2px #393025 !important;
+}
+
+h1.fiftyh1a107 {
+  font-family: compactaroman !important;
+  font-weight: normal !important;
+  font-size: 8rem !important;
+  position: absolute !important;
+  top: 1.95% !important;
+  right: 5.5% !important;
+  transform: scaleX(1.02) scaleY(0.97) !important;
+  color: #d4d1c2 !important;
+  letter-spacing: -5px !important;
+  -webkit-text-stroke: 2px #393025 !important;
+}
+
 h2.fiftyh2 {
   font-family: compactaroman !important;
   font-size: 5.15rem;
   font-weight: normal !important;
   position: absolute !important;
   top: 17.5% !important;
-  right: 4% !important;
+  right: 3.9% !important;
   color: #d4d1c2;
   transform: scaleY(0.47) scaleX(0.85);
   letter-spacing: -4px !important;
-  -webkit-text-stroke: 2px #393025;
+  -webkit-text-stroke: 1px #393025;
 }
 h3.fiftyh3 {
   font-family: compactaroman !important;
@@ -70,7 +121,7 @@ h3.fiftyh3 {
   right: 0.3% !important;
   color: #d4d1c2;
   -webkit-text-stroke: 1.5px #393025;
-  /* display: none; */
+  display: none;
 }
 @media (max-width: 576px) {
   h1.fiftyh1 {
@@ -78,6 +129,34 @@ h3.fiftyh3 {
     top: 1.5% !important ;
     right: 8.2% !important;
     letter-spacing: -4.5px !important;
+  }
+
+  h1.fiftyh1a100 {
+    font-size: 5.2rem !important;
+    top: 1.5% !important ;
+    right: 6.3% !important;
+    letter-spacing: -4.5px !important;
+    transform: scaleX(1.05) !important;
+  }
+
+  h1.fiftyh1a101 {
+    font-size: 5.2rem !important;
+    top: 1.5% !important ;
+    right: 5.4% !important;
+    letter-spacing: -2.5px !important;
+    transform: scaleX(1.1) !important;
+  }
+
+  h1.fiftyh1a107 {
+    font-size: 5.2rem !important;
+    top: 1.5% !important ;
+    right: 6.3% !important;
+    letter-spacing: -4.5px !important;
+    transform: scaleX(1.05) !important;
+  }
+
+  #botonDecimal {
+    display: none !important;
   }
 
   h2.fiftyh2 {
@@ -118,6 +197,9 @@ a#linkCancion {
 @media (max-width: 768px) {
   #myChart {
     height: 400px !important;
+  }
+  #botonDecimal {
+    display: none !important;
   }
 }
 

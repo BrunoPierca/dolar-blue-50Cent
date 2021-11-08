@@ -3,13 +3,18 @@ const fiftyFloat = document.getElementById("fiftyFloat");
 const pcomprablue = document.getElementById("comprablue");
 const pventablue = document.getElementById("ventablue");
 
+getDBlue();
+
 async function getDBlue() {
   const bluelyticsAPI = await fetch("https://api.bluelytics.com.ar/v2/latest");
   const data = await bluelyticsAPI.json();
   const dblue = await data.blue;
   const dblueVenta = await dblue.value_sell;
   const decimaldblueVenta = (dblueVenta / 2 - Math.trunc(dblueVenta / 2)) * 100;
-  fiftyh1.innerHTML = Math.trunc(dblueVenta / 2);
+
+  const fiftyAlBlue = Math.trunc(dblueVenta / 2);
+  fiftyh1.innerHTML = fiftyAlBlue;
+  console.log(fiftyAlBlue);
 
   const float = decimaldblueVenta.toFixed(0);
   if (float == 0) {
@@ -19,13 +24,96 @@ async function getDBlue() {
   const dblueCompra = await dblue.value_buy;
   pcomprablue.innerHTML = "Compra: $" + dblueCompra;
   pventablue.innerHTML = "Venta: " + "<strong>$" + dblueVenta + "</strong>";
+
+  // Transicion si 0.50USD llega a ser 3 digitos
+
+  if (fiftyAlBlue >= 100 && (fiftyAlBlue != 101 || fiftyAlBlue != 107)) {
+    fiftyh1.classList.remove("fiftyh1");
+    fiftyh1.classList.add("fiftyh1a100");
+  }
+  if (fiftyAlBlue == 101) {
+    fiftyh1.classList.remove("fiftyh1");
+    fiftyh1.classList.add("fiftyh1a101");
+  }
+  if (fiftyAlBlue == 107) {
+    fiftyh1.classList.remove("fiftyh1");
+    fiftyh1.classList.add("fiftyh1a107");
+  }
+
+  // Setear imagen
+
+  tomarScreen();
 }
 
-getDBlue();
+// Activar decimal
+const botonDecimal = document.getElementById("botonDecimal");
+botonDecimal.addEventListener("click", function toggleDecimal() {
+  if (fiftyFloat.style.display == "none") {
+    console.log("desactivar decimal");
+    fiftyFloat.style.display = "block";
+    botonDecimal.innerHTML = "Desactivar decimal";
+    botonDecimal.classList.add("animate__headShake");
+    tomarScreen();
+  } else {
+    console.log("activar decimal");
+
+    fiftyFloat.style.display = "none";
+    botonDecimal.innerHTML = "Activar decimal";
+    botonDecimal.classList.add("animate__headShake");
+    tomarScreen();
+  }
+  setTimeout(() => {
+    botonDecimal.classList.remove("animate__headShake");
+  }, 1000);
+});
+
+// Ocultar boton de decimal
+let fueOcultado = false;
+
+window.addEventListener("scroll", () => {
+  let y = window.scrollY;
+  if (y > 670) {
+    botonDecimal.classList.add("animate__fadeOutUp");
+    botonDecimal.classList.remove("animate__fadeInDown");
+    // botonDecimal.style.display = "none";
+    fueOcultado = true;
+  } else {
+    botonDecimal.style.display = "block";
+    if (botonDecimal.classList.contains("animate__fadeInDown")) {
+      botonDecimal.classList.remove("animate__fadeOutUp");
+    } else if (botonDecimal.style.display == "block" && fueOcultado == true) {
+      botonDecimal.classList.add("animate__fadeInDown");
+      fueOcultado = false;
+    }
+  }
+});
+
+// Fecha
 
 const fecha = new Date();
 const mes = fecha.getMonth() + 1;
 const anio = fecha.getFullYear();
+
+// Descargar como imagen
+
+const fiftyjpg = document.getElementById("fiftydiv");
+const guardar = document.getElementById("guardar");
+const nombreIMG = "Fifty en pesos " + fecha.getDate() + "/" + mes + "/" + anio;
+
+// Dom to image
+function tomarScreen(params) {
+  domtoimage
+    .toPng(fiftyjpg)
+    .then(function (dataUrl) {
+      let imagenFifty = new Image();
+      imagenFifty.src = dataUrl;
+      guardar.setAttribute("download", nombreIMG);
+      guardar.setAttribute("href", imagenFifty.src);
+    })
+    .catch(function (error) {
+      console.error("oops, something went wrong!", error);
+    });
+}
 
 // Cancion Random con link
 
@@ -203,11 +291,15 @@ let ejeX = [];
 
 // Dibujar ultimo mes:
 
+// ----------------------------------------------------------------------------
+// hacer que ultimo mes sean ultimos 31 dias en vez del ultimo mes x ej Octubre
+// ----------------------------------------------------------------------------
+
 ultMes.addEventListener("click", function ultimoMes() {
   i = dataHistorica.length - 1;
   ejeX = [];
   dataHistorica.forEach((element) => {
-    if (dataHistorica[i].date.includes(anio + "-0" + mes)) {
+    if (dataHistorica[i].date.includes(anio + "-" + mes)) {
       if (dataHistorica[i].source == "Blue") {
         dblueUltMes.push(dataHistorica[i].value_sell);
         ejeX.push(dataHistorica[i].date);
@@ -217,6 +309,27 @@ ultMes.addEventListener("click", function ultimoMes() {
     }
     i--;
   });
+  // let mesAnterior = mes - 1;
+  // i2 = 0;
+  // if (ejeX.length < 45) {
+  //   dataHistorica.forEach((element) => {
+  //     console.log(dataHistorica[i2].date.includes(anio + "-" + mesAnterior));
+
+  //     if (
+  //       dataHistorica[i2].date.includes(anio + "-" + mesAnterior) &&
+  //       dataHistorica[i2].date.includes(anio + "-" + mes)
+  //     ) {
+  //       if (dataHistorica[i2].source == "Blue") {
+  //         dblueUltMes.push(dataHistorica[i2].value_sell);
+  //         ejeX.push(dataHistorica[i2].date);
+  //       } else {
+  //         doficialUltMes.push(dataHistorica[i2].value_sell);
+  //       }
+  //     }
+  //     i2++;
+  //   });
+  // }
+
   window.myChart.destroy();
   redibujarTabla(dblueUltMes, doficialUltMes, ejeX);
 });
