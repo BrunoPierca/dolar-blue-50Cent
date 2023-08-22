@@ -64,9 +64,9 @@ h1.fiftyh1 {
 h1.fiftyh1a100 {
   font-family: compactaroman !important;
   font-weight: normal !important;
-  font-size: 8rem !important;
+  font-size: 7rem !important;
   position: absolute !important;
-  top: 2% !important;
+  top: 5% !important;
   right: 5.5% !important;
   transform: scaleX(1.01) scaleY(0.97) !important;
   color: #d4d1c2 !important;
