@@ -125,15 +125,15 @@ h3.fiftyh3 {
 }
 @media (max-width: 576px) {
   h1.fiftyh1 {
-    font-size: 5.2rem;
-    top: 1.5% !important ;
+    font-size: 4.6rem;
+    top: 4.5% !important ;
     right: 8.2% !important;
     letter-spacing: -4.5px !important;
   }
 
   h1.fiftyh1a100 {
-    font-size: 5.2rem !important;
-    top: 1.5% !important ;
+    font-size: 4.6rem;
+    top: 4.5% !important ;
     right: 6.3% !important;
     letter-spacing: -4.5px !important;
     transform: scaleX(1.05) !important;
